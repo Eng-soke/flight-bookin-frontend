@@ -20,18 +20,21 @@ function Report(){
         <SideNave/>
         <div className="sm:ml-[25%] ml-5 pt-10">
 
+    <div className="grid sm:grid-cols-2 gap-5">
 
         {
             getReport.map((report)=>{
-                return <div className="">  
-                <div className="bg-white shadow-md w-[320px] h-[30px] rounded hover:bg-sky-500 hover:text-white  m-2 "> {report.name} </div>     
-                  <div className="bg-white shadow-md w-[320px] h-[30px] rounded hover:bg-sky-500 hover:text-white  m-2 "> {report.email} </div>     
-                 <div className="bg-white shadow-md w-[320px] h-[220px] rounded hover:bg-sky-500 hover:text-white p-2 m-2 "> {report.description} </div> 
-
+                return <div className=""> 
+                <div className="flex gap-2"> 
+                <div className="bg-white shadow-md sm:w-[200px] w-[150px] h-[30px] rounded hover:bg-sky-500 hover:text-white  m-2 "> {report.name} </div>     
+                  <div className="bg-white shadow-md sm:w-[200px] w-[157px] h-[30px] rounded hover:bg-sky-500 hover:text-white  m-2 "> {report.email} </div>     
                  </div>    
+                 <div className="bg-white shadow-md sm:w-[425px] w-[330px] h-[220px] rounded hover:bg-sky-500 hover:text-white p-2 m-2 "> {report.description} </div> 
+                </div>
             })
         }
    
+        </div>
         </div>
       
 

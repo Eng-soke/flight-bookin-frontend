@@ -1,4 +1,4 @@
-import TwoPassanger from "../Images/TwoPassanger.JPG";
+import TwoPassanger from "../Images/TwoPassanger.jpg";
 import captanPilot from "../Images/captanPilot.jpg";
 import manPassanger from "../Images/manPassanger.jpg";
 

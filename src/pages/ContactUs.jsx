@@ -53,7 +53,7 @@ function ContactUs() {
         </div>
 
         <div className="lg:w-1/2 lg:pl-8">
-          <h3 className="text-2xl font-semibold">Send a Message</h3>
+          <h3 className="text-2xl font-semibold">Send a Message and Reports</h3>
           <form className="mt-6 space-y-4">
             <input value={name} onChange={(event)=> setName(event.target.value)}
               type="text"

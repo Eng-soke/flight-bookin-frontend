@@ -12,6 +12,7 @@ import Statistics from "./pages/Statistics"
 import Wadamo from "./pages/Wadamo"
 import Report from "./pages/Report"
 import AdminLogin from "./pages/AdminLogin"
+import AdminRegist from "./pages/adminRegist"
 function App(){
     return <div>
         <Routes>
@@ -28,6 +29,7 @@ function App(){
             <Route path="/wadamo" element={<Wadamo/>} />
             <Route path="/report" element={<Report/>} />
             <Route path="/admin" element={<AdminLogin/>} />
+            <Route path="/adminregist" element={<AdminRegist/>} />
         </Routes>
 
     </div>

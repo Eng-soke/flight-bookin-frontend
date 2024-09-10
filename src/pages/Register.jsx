@@ -19,7 +19,7 @@ function Register(){
             "password": password,
         }).then(()=>{
             alert("created has been succesfully")
-            navigate("/")
+            navigate("/local")
         }).catch((error)=> console.log(error))
     }
 

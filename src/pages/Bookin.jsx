@@ -19,6 +19,38 @@ const Bookin = () => {
 
   const prices = {
     // Mogadisho Safarada
+    "Mogadishu-kismayo": 89,
+    "Mogadishu-kgs": 46,
+    "Mogadishu-Boorama": 90,
+    "Mogadishu-cabudwaq": 89,
+    "Mogadishu-hargeysa": 98,
+    "Boorama-Mogadishu": 397,
+    "Boorama-hargeysa": 76,
+    "Boorama-kgs": 92,
+    "Boorama-cabudwaq": 90,
+    "Boorama-kisamyo": 76,
+    "Cabudwaq-Mogadishu": 90,
+    "Cabudwaq-hargeysa": 100,
+    "Cabudwaq-kgs": 110,
+    "Cabudwaq-kisamyo": 90,
+    "cabudwaq-Boorama": 82,
+    "Hargeysa-Mogadishu": 120,
+    "Hargeysa-kismayo": 250,
+    "Hargeysa-kgs": 89,
+    "Hargeysa-cabudwaq": 345,
+    "Hargeysa-Boorama": 678,
+    "Kgs-Mogadishu": 46,
+    "Kgs-hargeysa": 67,
+    "Kgs-cabudwaq": 76,
+    "Kgs-Boorama": 90,
+    "Kisamayo-Mogadishu": 76,
+    "Kisamayo-hargeysa": 100,
+    "Kisamayo-Boorama": 120,
+    "Kisamayo-cabudwaq": 100,
+    "kismayo-kgs": 110,
+
+    "Istanbul-Mogadishu": 1000,
+    "Mogadisho-Istanbul": 1000,
     "London-Mogadisho": 1500,
     "Mogadisho-London": 1500,
     "Istanbul-Mogadisho": 256,
@@ -169,6 +201,11 @@ const Bookin = () => {
                 <option value="Doha">Doha</option>
                 <option value="New York">New York</option>
                 <option value="Paris">Paris</option>
+                <option value="Kismayo">Kismayo</option>
+                <option value="Boorama">Boorama</option>
+                <option value="cabudwaq">cabudwaq</option>
+                <option value="kgs">kgs</option>
+                <option value="Hargeisa">Hargeisa</option>
               </select>
             </div>
 
@@ -189,6 +226,12 @@ const Bookin = () => {
                 <option value="Doha">Doha</option>
                 <option value="New York">New York</option>
                 <option value="Paris">Paris</option>
+                <option value="Kismayo">Kismayo</option>
+                <option value="Boorama">Boorama</option>
+                <option value="cabudwaq">cabudwaq</option>
+                <option value="kgs">kgs</option>
+                <option value="Hargeisa">Hargeisa</option>
+
               </select>
             </div>
 

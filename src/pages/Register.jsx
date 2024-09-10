@@ -13,7 +13,7 @@ function Register(){
     const navigate = useNavigate()
     const getRegister = (e)=>{
         e.preventDefault()
-        axios.post("http://localhost:1000/user/create",{
+        axios.post("https://backendflightbookin1.onrender.com/user/create",{
             "name": name,
             "email": email,
             "password": password,
@@ -27,7 +27,7 @@ function Register(){
     return <div className="flex justify-center sm:my-16 my-20">
 
 
-<form className="bg-sky-400 sm:w-[400px] w-[350px] h-[450px] sm:px-10 sm:py-10 px-5 py-10 rounded">
+            <form className="bg-sky-400 sm:w-[400px] w-[350px] h-[450px] sm:px-10 sm:py-10 px-5 py-10 rounded">
                 <input value={name} onChange={(event)=> setName(event.target.value)} className="w-[300px] rounded border-2 p-2" type="text" placeholder="Enter Name" />
                 <br />
                 <br />

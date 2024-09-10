@@ -13,7 +13,7 @@ function AdminLogin(){
     const handleget = (event)=>{
         event.preventDefault()
         
-        axios.post("http://localhost:1000/admin/create",{
+        axios.post("https://backendflightbookin1.onrender.com/create",{
             "username": username,
             "password": password
         }).then((response)=>{

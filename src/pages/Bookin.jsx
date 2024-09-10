@@ -100,7 +100,7 @@ const Bookin = () => {
       return;
     }
 
-    axios.post("http://localhost:1000/create", {
+    axios.post("https://backendflightbookin1.onrender.com/create", {
       "from": fromCity,
       "to": toCity,
       "departure": departureDate,

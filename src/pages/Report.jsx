@@ -8,7 +8,7 @@ function Report(){
 
 
     const getAllReports = ()=>{
-        axios.get("http://localhost:1000/report/get").then((response)=>{
+        axios.get("https://backendflightbookin1.onrender.com/report/get").then((response)=>{
             setGetReport(response.data)
         }).catch((error)=> console.log(error))
     }

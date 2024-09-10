@@ -12,7 +12,7 @@ function ContactUs() {
 
   const handleClick = (event)=>{
     event.preventDefault()
-    axios.post("http://localhost:1000/report",{
+    axios.post("https://backendflightbookin1.onrender.com/report",{
         "name": name,
         "email": email,
         "description": description

@@ -16,7 +16,7 @@ function Flights(){
     }
 
     const handleFlight =()=>{
-        axios.get("http://localhost:1000/results").then((response)=>{
+        axios.get("https://backendflightbookin1.onrender.com/results").then((response)=>{
             setFlights(response.data)
         }).catch((error)=> console.log(error))
     }

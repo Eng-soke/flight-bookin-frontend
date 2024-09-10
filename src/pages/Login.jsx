@@ -11,7 +11,7 @@ function Login(){
     const navigate = useNavigate()
     const handleClick = (e)=>{
         e.preventDefault()
-        axios.post("http://localhost:1000/user/login",{
+        axios.post("https://backendflightbookin1.onrender.com/user/login",{
             "email": email,
             "password": password
         }).then((response)=>{

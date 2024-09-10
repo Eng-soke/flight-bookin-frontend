@@ -8,11 +8,11 @@ function Dashboard() {
   const fetchTotalData = async () => {
     try {
       // Fetch total passengers
-      const passengerResponse = await axios.get("http://localhost:1000/passanger/total");
+      const passengerResponse = await axios.get("https://backendflightbookin1.onrender.com/passanger/total");
       const passengers = passengerResponse.data.passanger;
 
       // Fetch total price
-      const priceResponse = await axios.get("http://localhost:1000/bookings/totalPrice");
+      const priceResponse = await axios.get("https://backendflightbookin1.onrender.com/bookings/totalPrice");
       const totalPrice = priceResponse.data.totalPrice;
 
       // Set data to state

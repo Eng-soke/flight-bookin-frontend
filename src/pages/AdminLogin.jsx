@@ -1,5 +1,5 @@
 import { useState,useEffect } from "react"
-import { useNavigate } from "react-router-dom"
+import { useNavigate, Link} from "react-router-dom"
 import axios from "axios"
 function AdminLogin(){
 
@@ -13,7 +13,7 @@ function AdminLogin(){
     const handleget = (event)=>{
         event.preventDefault()
         
-        axios.post("https://backendflightbookin1.onrender.com/login",{
+        axios.post("https://backendflightbookin1.onrender.com/admin/login",{
             "username": username,
             "password": password
         }).then((response)=>{
@@ -45,7 +45,7 @@ function AdminLogin(){
             <br />
             <br />
             <button onClick={handleget} className="bg-sky-500 text-white w-[300px] rounded border-2 py-3 sm:mt-10 mt-5">Login </button>
-            <p className="text-white pt-10">Dont't have account yet? <Link to="/adminregist">Login here</Link></p>
+            <p className="text-white pt-10">Dont't have account yet? <Link to="/adminregist">Regist here</Link></p>
 
         </form>
 

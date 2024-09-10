@@ -13,6 +13,7 @@ import Wadamo from "./pages/Wadamo"
 import Report from "./pages/Report"
 import AdminLogin from "./pages/AdminLogin"
 import AdminRegist from "./pages/adminRegist"
+import Local from "./pages/Local"
 function App(){
     return <div>
         <Routes>
@@ -30,6 +31,7 @@ function App(){
             <Route path="/report" element={<Report/>} />
             <Route path="/admin" element={<AdminLogin/>} />
             <Route path="/adminregist" element={<AdminRegist/>} />
+            <Route path="/local" element={<Local/>} />
         </Routes>
 
     </div>

@@ -15,7 +15,7 @@ function AdminRegist(){
             "password": password,
         }).then(()=>{
             alert("created has been succesfully")
-            navigate("/")
+            navigate("/dash")
         }).catch((error)=> console.log(error))
     }
 

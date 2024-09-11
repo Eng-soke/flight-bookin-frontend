@@ -9,6 +9,7 @@ import CaptanPage from "../Components/CaptanPage"
 import PassengerPage from "../Components/PassengerPage"
 import Footer from "../Components/Footer"
 import Header1 from "../Components/Header1"
+import Local from "./Local"
 function Home(){
     return <div>
 
@@ -16,10 +17,11 @@ function Home(){
         <Header/>
         <Showcase/>
         <Body/>
-        <Showcasetwo/>
-        <ShowcaseThree/>
+        <Local/>
         <SeconBody/>
         <PartSecondBody/>
+        <Showcasetwo/>
+        <ShowcaseThree/>
         <CaptanPage/>
         <PassengerPage/>
         <Footer/>

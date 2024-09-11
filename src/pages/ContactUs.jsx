@@ -41,7 +41,7 @@ function ContactUs() {
           </p>
           <ul className="mt-6 space-y-3">
             <li><strong><i className="fa-solid text-sky-500 fa-location-dot"></i> Address:</strong> Mogadishu Eye, Banadir, Somalia</li>
-            <li><strong><i className="fa-solid text-sky-500 fa-phone"></i> Phone Number:</strong> +252-61x-xxxx</li>
+            <li><strong><i className="fa-solid text-sky-500 fa-phone"></i> Phone Number:</strong> +252-616739858</li>
             <li><strong><i className="fa-solid text-sky-500 fa-envelope"></i> E-Mail:</strong> Crewcoder@email.com</li>
           </ul>
           <div className="mt-6 flex space-x-4">

@@ -45,7 +45,7 @@ function AdminLogin(){
             <br />
             <br />
             <button onClick={handleget} className="bg-sky-500 text-white w-[300px] rounded border-2 py-3 sm:mt-10 mt-5">Login </button>
-            <p className="text-white pt-10">Dont't have account yet? <Link to="/adminregist">Regist here</Link></p>
+            {/* <p className="text-white pt-10">Dont't have account yet? <Link to="/adminregist">Regist here</Link></p> */}
 
         </form>
 

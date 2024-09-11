@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import MainBookin from './MainBookin';
 import Header1 from '../Components/Header1';
 import axios from "axios";
+import ClipLoader from "react-spinners/ClipLoader";
+import toast, { Toaster } from 'react-hot-toast';
 
 const Bookin = () => {
   const [fromCity, setFromCity] = useState('');
@@ -9,11 +11,13 @@ const Bookin = () => {
   const [price, setPrice] = useState('Price not available');
   const [departureDate, setDepartureDate] = useState('');
   const [returnDate, setReturnDate] = useState('');
-  const [passengers, setPassengers] = useState(0);
+  const [passengers, setPassengers] = useState(1);
   const [flightClass, setFlightClass] = useState('Economy');
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [getData, setgetData] = useState([]);
+
+  const [loadin, setLoadin] = useState(false)
 
   const isLogin = localStorage.getItem("user");
 
@@ -99,9 +103,8 @@ const Bookin = () => {
     "Malaysia-New York": 6543,
     "New York-Malaysia": 6543,
   };
-  
 
-  // Calculate and update price whenever fromCity, toCity, or passengers change
+  // Calculate and update price whenever fromCity, toCity, passengers, or flightClass change
   useEffect(() => {
     if (fromCity && toCity) {
       const route = `${fromCity.trim()}-${toCity.trim()}`; // Trim whitespace
@@ -111,21 +114,30 @@ const Bookin = () => {
 
       // Only update the price if it's available
       if (basePrice !== 'Price not available') {
-        setPrice(basePrice * passengers); // Multiply by number of passengers
+        let calculatedPrice = basePrice * passengers; // Multiply by number of passengers
+        
+        // Modify the price based on flight class
+        if (flightClass === 'Economy') {
+          calculatedPrice += 50; // Add 100 for Economy class
+        } else if (flightClass === 'First') {
+          calculatedPrice *= 2; // Double the price for First class
+        }
+
+        setPrice(calculatedPrice);
       } else {
         setPrice('Price not available');
       }
     } else {
       setPrice('Price not available');
     }
-  }, [fromCity, toCity, passengers]); // Recalculate price on change of fromCity, toCity, or passengers
+  }, [fromCity, toCity, passengers, flightClass]); // Recalculate price on change of fromCity, toCity, passengers, or flightClass
 
   const handleBooking = () => {
     if (!isLogin) {
       alert("Please login first");
       return;
     }
-
+    setLoadin(true)
     axios.post("https://backendflightbookin1.onrender.com/create", {
       "from": fromCity,
       "to": toCity,
@@ -138,7 +150,11 @@ const Bookin = () => {
       "email": email
     }).then((response) => {
       setgetData(response.data);
-      alert("Booking has been successfully made");
+      setLoadin(false)
+      toast.success("Bookin has been successfull",{
+        position: "top-center"
+    })
+
     }).catch((error) => {
       alert("Booking Failed");
       console.error(error);
@@ -148,6 +164,7 @@ const Bookin = () => {
   return (
     <div>
       <Header1 />
+      
       <div className="bg-[url('/path-to-image.jpg')] bg-cover flex items-center justify-center sm:mt-0 mt-32 sm:mb-0 mb-28 h-screen">
         <div className="bg-sky-500 bg-opacity-80 sm:mb-0 mb-10 sm:mt-0 mt-24 p-8 rounded-lg shadow-lg w-full max-w-5xl">
           <h2 className="text-xl font-semibold mb-4">Search Flights</h2>
@@ -166,7 +183,6 @@ const Bookin = () => {
               />
             </div>
 
-          
             <div className="flex flex-col w-full md:w-1/2 lg:w-1/4">
               <label className="mb-2">Email:</label>
               <input
@@ -187,7 +203,7 @@ const Bookin = () => {
                 onChange={(e) => setFromCity(e.target.value)}
               >
                 <option value="">Select a city</option>
-                <option value="Mogadisho">Mogadisho</option>
+                <option value="Mogadishu">Mogadishu</option>
                 <option value="London">London</option>
                 <option value="Singapore">Singapore</option>
                 <option value="Kuala Lumpur">Kuala Lumpur</option>
@@ -197,9 +213,9 @@ const Bookin = () => {
                 <option value="Paris">Paris</option>
                 <option value="Kismayo">Kismayo</option>
                 <option value="Boorama">Boorama</option>
-                <option value="cabudwaq">cabudwaq</option>
-                <option value="kgs">kgs</option>
-                <option value="Hargeisa">Hargeisa</option>
+                <option value="Cabudwaq">Cabudwaq</option>
+                <option value="Kgs">Kgs</option>
+                <option value="Hargeysa">Hargeysa</option>
               </select>
             </div>
 
@@ -212,7 +228,7 @@ const Bookin = () => {
                 onChange={(e) => setToCity(e.target.value)}
               >
                 <option value="">Select a city</option>
-                <option value="Mogadisho">Mogadisho</option>
+                <option value="Mogadishu">Mogadishu</option>
                 <option value="London">London</option>
                 <option value="Singapore">Singapore</option>
                 <option value="Kuala Lumpur">Kuala Lumpur</option>
@@ -222,10 +238,9 @@ const Bookin = () => {
                 <option value="Paris">Paris</option>
                 <option value="Kismayo">Kismayo</option>
                 <option value="Boorama">Boorama</option>
-                <option value="cabudwaq">cabudwaq</option>
-                <option value="kgs">kgs</option>
-                <option value="Hargeisa">Hargeisa</option>
-
+                <option value="Cabudwaq">Cabudwaq</option>
+                <option value="Kgs">Kgs</option>
+                <option value="Hargeysa">Hargeysa</option>
               </select>
             </div>
 
@@ -280,9 +295,9 @@ const Bookin = () => {
 
           {/* Price and Book Button */}
           <div className="flex flex-col md:flex-row items-center justify-between mt-6">
-            <p className="text-lg mb-4 md:mb-0">Price: {price}</p>
+            <p className="text-lg mb-4 md:mb-0">Price: ${price}</p>
             <button
-              className="bg-white  dark:bg-white dark:text-white text-black py-2 px-6 rounded"
+              className="bg-white dark:bg-white dark:text-white text-black py-2 px-6 rounded"
               onClick={handleBooking}
             >
               Book now
@@ -290,6 +305,8 @@ const Bookin = () => {
           </div>
         </div>
       </div>
+      <Toaster />
+
       <MainBookin />
     </div>
   );

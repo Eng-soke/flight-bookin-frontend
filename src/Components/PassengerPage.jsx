@@ -13,7 +13,7 @@ function PassengerPage() {
     }, []);
 
     return (
-        <div className="px-4 sm:px-6 lg:px-8 bg-[var(--background-color)] text-[var(--text-color)] dark:bg-[var(--dark-background-color)] dark:text-[var(--dark-text-color)]">
+        <div className="px-4 sm:px-6 lg:px-8 bg-[var(--background-color)]  dark:bg-[var(--dark-background-color)] ">
             <div className="mt-20 text-center">
                 <h1 className="text-2xl font-bold pb-4 inline-block overflow-hidden whitespace-nowrap border-r-4 border-black animate-typing-loop dark:border-gray-400">
                     Checkout latest aviation

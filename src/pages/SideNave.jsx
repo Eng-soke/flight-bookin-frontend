@@ -42,10 +42,10 @@ const SideNave = () => {
           <h1 className="text-white underline pt-1 font-serif">Admin Profile</h1>
         </div>
 
-        <i
-          className="text-3xl pb-10 m-2 cursor-pointer fa-solid fa-circle-xmark"
-          onClick={handleCollapse}
-        ></i>
+        <i onClick={handleCollapse}
+         class="text-3xl pb-10 fa-solid fa-arrow-right-arrow-left"></i>
+          
+        
       </div>
 
       <ul className={`${collapsed ? 'text-center' : ''}`}>
